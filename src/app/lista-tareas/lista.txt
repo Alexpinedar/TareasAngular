@@ -1,0 +1,3 @@
+LlenarInforme, Llena el informe para el ingreso a las instalacion.
+check, Realiza la inspeccion de que los elementos esta en buen estado.
+Autoriza, Autoriza el uso de datos, firmando el formulario.

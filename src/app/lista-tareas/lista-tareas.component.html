@@ -1,0 +1,37 @@
+<hr>
+<h1>Componete lista tarea</h1>
+<h2>tu edad {{edad}}</h2>
+<h3>lista de nombres {{tareas}}</h3>
+<ul>
+   <li *ngFor="let tarea of tareas; let indice = index">{{indice + '. ' +tarea }}</li>
+</ul>
+
+<h4>Seleccionar para mostrar inmediatamente</h4>
+<p>Selecciona el archivo a mostrar</p>
+<input type="file" id="archivo1" />
+<h5>Contenido del archivo:</h5>
+<pre id="contenido-archivo"></pre>
+<hr/>
+
+<script>
+    function mostrarContenido(contenido) {
+        const elemento = document.getElementById('contenido-archivo');
+        elemento.innerHTML = contenido;
+      }
+    function leerArchivo(e) {
+      const archivo = e.target.files[0];
+      if (!archivo) {
+        return;
+      }
+      const lector = new FileReader();
+      lector.onload = function(e) {
+        const contenido = e.target.result;
+        mostrarContenido(contenido);
+      };
+      lector.readAsText(archivo);
+    }
+
+    document.querySelector('#archivo1')
+      .addEventListener('change', leerArchivo, false);
+
+</script>
