@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaTareasComponent } from './lista-tareas.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from '../app.component';
 
 describe('ListaTareasComponent', () => {
   let component: ListaTareasComponent;

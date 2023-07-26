@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {FormControl,FormGroup} from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+
 
 @Component({
   selector: 'lista-tareas',
@@ -7,15 +10,26 @@ import { Component } from '@angular/core';
 })
 export class ListaTareasComponent  {
 
-  edad: number;
-  tareas: Array<string>;
+  private fileTmp:any;
   constructor(){
-    this.edad = 18;
-    this.tareas = ["alex", "juan", "kike"];
+    
   }
 
   ngOnInit():void{
     console.log('Componente ListaTarea Cargado');
+  }
+
+  getFile($event:any):void{
+    //console.log($event)
+    const [ file ] = $event.target.files;
+    this.fileTmp = {
+      fileRaw:file,
+      fileName:file.name
+    }
+  }
+
+  sendFile():void{
+
   }
 
 }
